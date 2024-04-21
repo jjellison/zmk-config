@@ -23,14 +23,14 @@
   pinctrl-1 = <&spi3_sleep>;
   pinctrl-names = "default", "sleep";
 
-  led_strip: SK6812@0 {
-    compatible = "worldsemi,sk6812-spi";
+  led_strip: WS2812@0 {
+    compatible = "worldsemi,ws2812-spi";
 
     /* SPI */
     reg = <0>; /* ignored, but necessary for SPI bindings */
     spi-max-frequency = <4000000>;
 
-    /* SK6812 */
+    /* WS2812 */
     chain-length = <6>; /* number of LEDs */
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
