@@ -31,7 +31,7 @@
     spi-max-frequency = <4000000>;
 
     /* WS2812 */
-    chain-length = <27>; /* number of LEDs */
+    chain-length = <35>; /* number of LEDs */
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
     color-mapping = <LED_COLOR_ID_GREEN
@@ -40,8 +40,17 @@
   };
 };
 
+&led_strip {
+    chain-length = <35>;
+};
+
+vbatt: vbatt {
+    compatible = "zmk,battery-nrf-vddh";
+};
+
 / {
     chosen {
         zmk,underglow = &led_strip;
+        zmk,battery = &vbatt;
     };
 };
