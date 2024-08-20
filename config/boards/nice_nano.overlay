@@ -40,6 +40,13 @@
   };
 };
 
+&led_strip {
+    chain-length = <35>;
+};
+
+vbatt: vbatt {
+    compatible = "zmk,battery-nrf-vddh";
+};
 
 / {
     chosen {
