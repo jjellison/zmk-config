@@ -28,15 +28,12 @@
 
     /* SPI */
     reg = <0>; /* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
+    spi-max-frequency = <5250000>;
 
     /* WS2812 */
     chain-length = <35>; /* number of LEDs */
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN
-                          LED_COLOR_ID_RED
-                          LED_COLOR_ID_BLUE>;
   };
 };
 
@@ -48,9 +45,14 @@ vbatt0: vbatt {
     compatible = "zmk,battery-nrf-vddh";
 };
 
+display0: display {
+    compatible = "solomon,ssd1306fb";
+}
+
 / {
     chosen {
         zmk,underglow = &led_strip;
         zmk,battery = &vbatt0;
+        zmk,display = &display0;
     };
 };
