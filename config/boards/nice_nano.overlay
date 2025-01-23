@@ -46,7 +46,7 @@ vbatt0: vbatt {
 };
 
 display0: display {
-    compatible = "solomon,ssd1306fb";
+    compatible = "gooddisplay,il0323";
 }
 
 / {
